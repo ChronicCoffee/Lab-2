@@ -10,7 +10,7 @@ public class Driver {
     public static void main(String[] args) {
         // Check if a valid sorting algorithm choice is provided
         if (args.length != 1 || !args[0].matches("[b|i|s|q]")) {
-            System.out.println("Invalid input. Please provide one of the following: b (Bubble Sort), i (Insertion Sort), s (Selection Sort), q (QuickSort)");
+            System.out.println("Invalid input. Please provide one of the following: b (Bubble Sort), i (Insertion Sort), s (Selection Sort), q (QuickSort) Must be like this: java exercise3.Driver b, i, s, or q");
             return;
         }
 
