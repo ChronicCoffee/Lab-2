@@ -1,6 +1,7 @@
 package exercise3;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Driver {
 
@@ -8,46 +9,70 @@ public class Driver {
     public static final int UPPER_BOUND = 1000; // Upper bound for random numbers
 
     public static void main(String[] args) {
-        // Check if a valid sorting algorithm choice is provided
-        if (args.length != 1 || !args[0].matches("[b|i|s|q]")) {
-            System.out.println("Invalid input. Please provide one of the following: b (Bubble Sort), i (Insertion Sort), s (Selection Sort), q (QuickSort) Must be like this: java exercise3.Driver b, i, s, or q");
-            return;
-        }
+        Scanner scanner = new Scanner(System.in);
+        Random rand = new Random();
 
         // Generate an array of random integers
         Integer[] nums = new Integer[SIZE];
-        Random rand = new Random();
         for (int i = 0; i < SIZE; i++) {
             nums[i] = rand.nextInt(UPPER_BOUND);
         }
 
-        // Display the array before sorting
-        System.out.println("Array before sorting:");
-        printArray(nums);
+        // Main loop to allow continuous input
+        while (true) {
+            // Display the array before sorting
+            System.out.println("\nArray before sorting:");
+            printArray(nums);
 
-        // Perform sorting based on the command-line argument
-        char choice = args[0].charAt(0);
-        switch (choice) {
-            case 'b':
-                bubbleSort(nums);
-                System.out.println("\nArray after Bubble Sort (descending order):");
+            // Prompt the user to enter a sorting algorithm choice
+            System.out.println("\nEnter a sorting algorithm choice:");
+            System.out.println("b (Bubble Sort), i (Insertion Sort), s (Selection Sort), q (QuickSort), x (Exit)");
+            String input = scanner.nextLine().trim(); // Read the input
+
+            // Exit the program if the user enters 'x'
+            if (input.equals("x")) {
+                System.out.println("Exiting the program. Goodbye!");
                 break;
-            case 'i':
-                insertionSort(nums);
-                System.out.println("\nArray after Insertion Sort (descending order):");
-                break;
-            case 's':
-                selectionSort(nums);
-                System.out.println("\nArray after Selection Sort (descending order):");
-                break;
-            case 'q':
-                quickSort(nums, 0, nums.length - 1);
-                System.out.println("\nArray after QuickSort (descending order):");
-                break;
+            }
+
+            // Validate the input
+            if (input.length() != 1 || !input.matches("[b|i|s|q]")) {
+                System.out.println("Invalid input. Please provide one of the following: b, i, s, q, or x to exit.");
+                continue; // Skip the rest of the loop and prompt again
+            }
+
+            // Perform sorting based on the user's choice
+            char choice = input.charAt(0);
+            switch (choice) {
+                case 'b':
+                    bubbleSort(nums);
+                    System.out.println("\nArray after Bubble Sort (descending order):");
+                    break;
+                case 'i':
+                    insertionSort(nums);
+                    System.out.println("\nArray after Insertion Sort (descending order):");
+                    break;
+                case 's':
+                    selectionSort(nums);
+                    System.out.println("\nArray after Selection Sort (descending order):");
+                    break;
+                case 'q':
+                    quickSort(nums, 0, nums.length - 1);
+                    System.out.println("\nArray after QuickSort (descending order):");
+                    break;
+            }
+
+            // Display the array after sorting
+            printArray(nums);
+
+            // Reset the array to its original state for the next sorting
+            for (int i = 0; i < SIZE; i++) {
+                nums[i] = rand.nextInt(UPPER_BOUND);
+            }
         }
 
-        // Display the array after sorting
-        printArray(nums);
+        // Close the scanner
+        scanner.close();
     }
 
     // Method to print the array
