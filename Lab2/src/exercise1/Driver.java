@@ -21,7 +21,7 @@ public class Driver
 		studs.add( new Student( "Anderson", 34 ) );
 		studs.add( new Student( "Moore", 33 ) );
 
-		       // Print the list before sorting
+		// Print the list before sorting
         System.out.println("Before sorting:");
         for (Student s : studs) {
             System.out.println(s);
