@@ -1,0 +1,74 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Java Program",
+            "request": "launch",
+            "mainClass": ""
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Driver",
+            "request": "launch",
+            "mainClass": "exercise1.Driver",
+            "projectName": "lab2StartingCode"
+        },
+        {
+            "type": "java",
+            "name": "Driver(1)",
+            "request": "launch",
+            "mainClass": "exercise2.Driver",
+            "projectName": "lab2StartingCode"
+        },
+        {
+            "type": "java",
+            "name": "Driver(2)",
+            "request": "launch",
+            "mainClass": "exercise3.Driver",
+            "projectName": "lab2StartingCode"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "exercise3.Driver",
+            "args": "b",  // Add this line to pass the argument
+            "projectName": "Lab2"  // Replace with your project name
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File (Insertion Sort)",
+            "request": "launch",
+            "mainClass": "exercise3.Driver",
+            "args": "i",  // Add this line to pass the argument
+            "projectName": "Lab2"  // Replace with your project name
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File (Selection Sort)",
+            "request": "launch",
+            "mainClass": "exercise3.Driver",
+            "args": "s",  // Add this line to pass the argument
+            "projectName": "Lab2"  // Replace with your project name
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File (QuickSort)",
+            "request": "launch",
+            "mainClass": "exercise3.Driver",
+            "args": "q",  // Add this line to pass the argument
+            "projectName": "Lab2"  // Replace with your project name
+        }
+
+    ]
+}
